@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -7,9 +6,9 @@
   <title>Liên hệ - Trường Đại học Chí Đức</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       padding: 20px;
       text-align: left;
+     font-family: Arial, sans-serif;
     }
 
     .text-block p {
@@ -17,7 +16,6 @@
       font-size: 1.3em;
       color: midnightblue;
     }
-
     .logo-row {
       display: flex;
       align-items: center;
@@ -26,8 +24,8 @@
     }
 
     .logo-img {
-      width: 200px;
-      height: 200px;
+      width: 230px;
+      height: 230px;
       flex-shrink: 0;
     }
 
@@ -56,7 +54,7 @@
     }
     nav {
       background-color: midnightblue;
-      padding: 10 20px;
+      padding: 25px;
       display: flex;
       justify-content: space-evenly;
     }
@@ -64,7 +62,7 @@
       color: #ffffff;
       text-decoration: none;
       font-size: 20px;
-      transition: color 0.3s;
+      transition: color 0.6s;
     }
     nav a:hover {
       color: #888;
@@ -83,23 +81,35 @@
       100% { letter-spacing: 1px; }
     }
     .contact-section {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 20px;
-      gap: 20px;
-    }
-    .map img {
-      width: 100%;
-      max-width: 900px;
-      border: 1px solid #ccc;
-    }
-    .branches {
-      background-color: #f0f0f0;
-      padding: 35px;
-      border-radius: 6px;
-      width: 70%;
-      max-width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.map {
+  flex: 1.5; 
+  min-width: 200px;
+}
+
+.map iframe {
+  width: 100%;
+  height: 350px; 
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.branches {
+  flex: 1.5;
+  background-color: #f0f0f0;
+  padding: 40px;
+  border-radius: 6px;
+  min-width: 300px;
+  max-width: 400px;
+  box-sizing: border-box;
     }
     .branches input {
       width: 100%;
@@ -127,14 +137,14 @@
     .contact-info {
       margin-bottom: 20px;
     }
-    form input, form textarea {
+form input, form textarea {
       display: block;
       width: 80%;
       max-width: 500px;
       margin: 10px auto;
       padding: 10px;
       border: 1px solid #ccc;
-    }
+      }
     .submit-button {
       background-color: #ff9933;
       color: white;
@@ -189,6 +199,25 @@ footer {
       50% { transform: scale(1.1); }
       100% { transform: scale(1); }
     }
+    form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: #ff9933;
+  box-shadow: 0 0 6px rgba(255, 153, 51, 0.6);
+  transition: 0.3s;
+}
+.contact-section,
+.contact-form-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.contact-section.visible,
+.contact-form-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
   </style>
 </head>
 <body>
@@ -205,11 +234,12 @@ footer {
 </header>
 
 <nav>
-  <a href="#">Trang chủ</a>
-  <a href="#">Ngành đào tạo</a>
-  <a href="#">Hình thức xét tuyển</a>
-  <a href="login.html">Liên hệ hỗ trợ</a>
-  <a href="register.html">Đăng nhập</a>
+  <a
+  href="https://deathheart1108.github.io/TrangChu/">Trang chủ</a>
+  <a href="https://nganhhoc.w3spaces.com/nganhhoc-jlv5p.html">Ngành đào tạo</a>
+  <a href="https://demo-web-iota.vercel.app/">Hình thức xét tuyển</a>
+  <a href="login.html">Liên hệ</a>
+  <a href="https://nguyenhomythu.github.io/dangnhap_gibhub/">Đăng nhập</a>
 </nav>
   <header>
 
@@ -219,8 +249,11 @@ footer {
 
   <section class="contact-section">
     <div class="map">
-      <img src="https://www.umt.edu.vn/vi-vn/images/resize-770x0/upload/media/M63b391f5b767c/du-hoc-la-gi.png?v=1.31" alt="Hình ảnh trường">
-    </div>
+    <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.5970157117225!2d106.6360403750176!3d10.842736189312882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752969d33e6093%3A0x4976c86c308ff7cb!2zNzAgTmd1eeG7hW4gUXXDoW5nLCBQaMaw4budbmcgMTMsIFF14bqjbmcgVMOibiBCw6xuaCwgVGjDoG5oIHBo4buRIEjDoCBDaMOtbmggTWluaCBDaMOidQ!5e0!3m2!1svi!2s!4v1720073722123!5m2!1svi!2s"
+  allowfullscreen="" loading="lazy">
+  </iframe>
+</div>
     <div class="branches">
       <h3>Tra cứu chi nhánh</h3>
       <input type="text" placeholder="Nhập tên chi nhánh...">
@@ -264,23 +297,35 @@ footer {
   </div>
 
   <script>
-    function submitForm(event) {
-      event.preventDefault();
-      const name = document.getElementById("name").value;
-      const email = document.getElementById("email").value;
-      const message = document.getElementById("message").value;
-      const result = document.getElementById("result");
-      if (name && email && message) {
-        result.style.color = 'green';
-        result.textContent = "Liên hệ thành công!";
-      } else {
-        result.style.color = 'red';
-        result.textContent = "Vui lòng điền đầy đủ thông tin.";
-      }
+  function submitForm(event) {
+    event.preventDefault();
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+    const result = document.getElementById("result");
+    if (name && email && message) {
+      alert("Cảm ơn bạn đã liên hệ. Chúng tôi sẽ phản hồi sớm!");
+      result.style.color = 'green';
+      result.textContent = "Liên hệ thành công!";
+    } else {
+      result.style.color = 'red';
+      result.textContent = "Vui lòng điền đầy đủ thông tin.";
     }
+  }
+
+  // Hiệu ứng cuộn xuống mới hiển thị
+  window.addEventListener("scroll", function () {
+    const elements = document.querySelectorAll(".contact-section, .contact-form-section");
+    const screenHeight = window.innerHeight;
+    elements.forEach(el => {
+      const position = el.getBoundingClientRect().top;
+      if (position < screenHeight - 100) {
+        el.classList.add("visible");
+      }
+    });
+  });    
   </script>
 </body>
 </html>
-
 
 
